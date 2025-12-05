@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>¡Feliz cumpleaños, Fátima! 🎀</title>
+  <style>
+    /* VARIABLES MEJORADAS */
+    :root {
+      --pink-1: #ffeff6;
+      --pink-2: #ffd3e8;
+      --pink-3: #ff8fbf;
+      --accent: #ff4da6;
+      --gold: #ffd166;
+      --purple: #d8a7ff;
+      --blue: #a3d5ff;
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.95);
+      --shadow-soft: 0 8px 32px rgba(255, 77, 166, 0.2);
+      --font-primary: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+    }
+
+    /* RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background: radial-gradient(circle at 20% 30%, var(--pink-1), transparent 35%),
+                  radial-gradient(circle at 80% 70%, var(--pink-2), transparent 30%),
+                  linear-gradient(135deg, #ffd3e8 0%, #ff8fbf 50%, #ff4da6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    /* CARD PRINCIPAL */
+    .card {
+      width: 100%;
+      max-width: min(1000px, 95vw);
+      min-height: min(680px, 85vh);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+      box-shadow: var(--shadow-soft), 
+                  inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr minmax(300px, 400px);
+      gap: 30px;
+      padding: 32px;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* SECCIÓN IZQUIERDA */
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      z-index: 2;
+    }
+
+    /* TÍTULO */
+    .headline {
+      font-size: clamp(2.5rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 800;
+      color: var(--text-primary);
+      text-shadow: 0 4px 20px rgba(255, 77, 166, 0.3);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .headline .spark {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 1.1em;
+      padding: 10px 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fff8e6, #ffe6b8);
+      box-shadow: 0 6px 20px rgba(255, 209, 102, 0.3);
+      animation: gentlePop 3s infinite;
+      transform-origin: center;
+    }
+
+    @keyframes gentlePop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* SUBTÍTULO */
+    .sub {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* MENSAJE */
+    .message {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), transparent);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      flex-grow: 1;
+    }
+
+    /* BOTONES ARREGLADOS */
+    .cta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .btn {
+      padding: 16px 24px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 16px rgba(255, 77, 166, 0.2);
+      transform: translateY(0);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      min-height: 52px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: translateX(-100%);
+    }
+
+    .btn:hover::after {
+      animation: shimmer 0.8s;
+    }
+
+    @keyframes shimmer {
+      100% { transform: translateX(100%); }
+    }
+
+    .btn--pink {
+      background: linear-gradient(135deg, var(--accent), #ff2d93);
+      color: white;
+    }
+
+    .btn--ghost {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(255, 77, 166, 0.3);
+    }
+
+    .btn:active {
+      transform: translateY(-1px);
+    }
+
+    .btn.active {
+      background: linear-gradient(135deg, #ff2d93, var(--accent));
+      box-shadow: 0 6px 20px rgba(255, 45, 147, 0.4);
+    }
+
+    /* SECCIÓN DERECHA */
+    .right {
+      position: relative;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      z-index: 2;
+    }
+
+    .scene {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* PASTEL */
+    .cake {
+      width: 260px;
+      height: 230px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fff, #ffe6f4);
+      box-shadow: 0 16px 40px rgba(255, 77, 166, 0.2);
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 28px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .cake:hover {
+      transform: scale(1.02);
+    }
+
+    .tier {
+      width: 200px;
+      height: 110px;
+      background: linear-gradient(180deg, #fff, #ffdff0);
+      border-radius: 16px;
+      box-shadow: inset 0 6px 16px rgba(255, 77, 166, 0.1);
+    }
+
+    .frosting {
+      position: absolute;
+      top: 35px;
+      width: 240px;
+      height: 42px;
+      background: linear-gradient(90deg, #fff, #ffd7ec);
+      border-radius: 35px;
+      box-shadow: 0 6px 16px rgba(255, 77, 166, 0.12);
+    }
+
+    .candle {
+      position: absolute;
+      top: -20px;
+      width: 12px;
+      height: 44px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, #ff9ad1, #ff5fb7);
+      box-shadow: 0 4px 12px rgba(255, 77, 166, 0.15);
+    }
+
+    .flame {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 22px;
+      border-radius: 50% 50% 40% 40%;
+      background: radial-gradient(circle at 40% 30%, #fffecb, #ffd166 40%, #ff7ab1 70%);
+      filter: drop-shadow(0 4px 8px rgba(255, 160, 200, 0.25));
+      animation: gentleFlicker 2s infinite;
+    }
+
+    @keyframes gentleFlicker {
+      0%, 100% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.08); }
+    }
+
+    .flame.out {
+      animation: blowOut 0.5s forwards;
+    }
+
+    @keyframes blowOut {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      100% { transform: translateX(-50%) scale(0); opacity: 0; }
+    }
+
+    /* GLOBOS */
+    .balloon {
+      position: absolute;
+      width: 48px;
+      height: 58px;
+      border-radius: 50% 50% 50% 50%;
+      background: linear-gradient(180deg, var(--accent), rgba(255, 45, 147, 0.8));
+      box-shadow: 0 8px 24px rgba(255, 77, 166, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.4rem;
+      animation: gentleFloat 10s ease-in-out infinite;
+      z-index: 3;
+      opacity: 0.9;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      width: 2px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .b1 { left: 10%; top: 15%; animation-delay: 0s; }
+    .b2 { left: 25%; top: 8%; animation-delay: 1.5s; }
+    .b3 { left: 75%; top: 12%; animation-delay: 0.8s; }
+    .b4 { left: 85%; top: 28%; animation-delay: 2.3s; }
+
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(1deg); }
+    }
+
+    /* BRILLOS */
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff, #ffd6ef);
+      opacity: 0;
+      animation: gentleTwinkle 5s infinite;
+      z-index: 2;
+    }
+
+    @keyframes gentleTwinkle {
+      0%, 100% { opacity: 0; transform: scale(0.8); }
+      50% { opacity: 0.7; transform: scale(1.1); }
+    }
+
+    .s1 { left: 12%; top: 22%; animation-delay: 0.4s; }
+    .s2 { left: 32%; top: 48%; animation-delay: 1.8s; }
+    .s3 { left: 68%; top: 18%; animation-delay: 2.6s; }
+    .s4 { left: 82%; top: 52%; animation-delay: 3.4s; }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+      border-radius: 24px;
+      padding: 40px;
+      max-width: min(700px, 95vw);
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transform: scale(0.95);
+      transition: transform 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-overlay.active .modal {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .modal-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .modal-subtitle {
+      color: #666;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .letter-content {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #444;
+      text-align: justify;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 16px;
+      border-left: 4px solid var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .letter-signature {
+      text-align: right;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(255, 77, 166, 0.2);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+      z-index: 1001;
+    }
+
+    .close-modal:hover {
+      transform: rotate(90deg);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .card {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: auto;
+        gap: 24px;
+        padding: 24px;
+      }
+      
+      .right {
+        order: -1;
+        min-height: 280px;
+        height: 35vh;
+      }
+      
+      .headline {
+        text-align: center;
+        justify-content: center;
+      }
+      
+      .cta {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+        border-radius: 20px;
+      }
+      
+      .left {
+        padding: 16px;
+      }
+      
+      .headline {
+        font-size: 2rem;
+      }
+      
+      .btn {
+        padding: 14px 20px;
+        font-size: 0.95rem;
+      }
+      
+      .balloon:nth-child(3),
+      .balloon:nth-child(4) {
+        display: none;
+      }
+      
+      .modal {
+        padding: 24px;
+      }
+      
+      .modal-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .headline {
+        font-size: 1.7rem;
+      }
+      
+      .btn {
+        padding: 12px 16px;
+        min-height: 48px;
+      }
+    }
+
+    /* CRÉDITOS */
+    .credit {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* ESTRELLAS PARA MOMENTOS MÁGICOS */
+    .stars-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkleStar 1.5s infinite alternate;
+      opacity: 0;
+    }
+
+    @keyframes twinkleStar {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Card Principal -->
+  <div class="card" id="birthdayCard">
+    <div class="left">
+      <div class="headline">
+        <div>¡Feliz cumpleaños,</div>
+        <div class="spark">Fátima 🎀</div>
+      </div>
+      
+      <div class="sub">Tu luz ilumina cada paso de tu increíble camino</div>
+
+      <div class="message" id="mensaje">
+        Querida Fátima, hoy celebramos no solo tu nacimiento, sino la maravillosa persona en la que te has convertido. Cada día demuestras una fuerza interior que inspira a todos a tu alrededor. ¡Que este año te traiga todo lo que mereces y más! ✨
+      </div>
+
+      <div class="cta">
+        <button class="btn btn--pink" id="btnConfetti">
+          <span>Confeti suave</span> 🎉
+        </button>
+        <button class="btn btn--ghost" id="btnLetter">
+          <span>Carta especial</span> 💌
+        </button>
+        <button class="btn btn--ghost" id="btnMagic">
+          <span>Momento mágico</span> ✨
+        </button>
+      </div>
+
+      <div class="credit">Con todo el cariño del mundo — ¡Felicidades!</div>
+    </div>
+
+    <div class="right">
+      <div class="scene">
+        <div class="balloon b1">💖</div>
+        <div class="balloon b2">🌟</div>
+        <div class="balloon b3">🎀</div>
+        <div class="balloon b4">✨</div>
+
+        <div class="cake" id="cake">
+          <div class="frosting"></div>
+          <div class="tier"></div>
+          <div class="candle">
+            <div class="flame" id="flame"></div>
+          </div>
+        </div>
+
+        <div class="sparkle s1"></div>
+        <div class="sparkle s2"></div>
+        <div class="sparkle s3"></div>
+        <div class="sparkle s4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor para estrellas -->
+  <div class="stars-container" id="starsContainer"></div>
+
+  <!-- Modal de la Carta -->
+  <div class="modal-overlay" id="letterModal">
+    <div class="modal">
+      <button class="close-modal" id="closeModal">&times;</button>
+      
+      <div class="modal-header">
+        <h2 class="modal-title">Para Fátima, en su día especial</h2>
+        <div class="modal-subtitle">Una carta sobre tu increíble fuerza</div>
+      </div>
+      
+      <div class="letter-content">
+        <p>Querida Fátima,</p>
+        
+        <p>En este día tan especial, quiero que recuerdes algo fundamental: <strong>eres una guerrera</strong>. Cada día, te levantas con una determinación que pocos poseen. Has enfrentado desafíos que habrían hecho retroceder a cualquiera, pero tú sigues adelante, con la cabeza en alto y el corazón lleno de valentía.</p>
+        
+        <p>Tu lucha no es en vano. Cada obstáculo superado es un testimonio de tu resiliencia. Cada caída se convierte en una oportunidad para levantarte más fuerte. Y cada victoria, por pequeña que parezca, es un paso más en este increíble viaje hacia la mejor versión de ti misma.</p>
+        
+        <p>Recuerdo esos momentos en que dudaste, en que el camino parecía demasiado difícil. Pero también recuerdo cómo, una y otra vez, encontraste la fuerza para continuar. Esa chispa en tus ojos cuando decides no rendirte, esa determinación en tu voz cuando afirmas "yo puedo", esa es la esencia de quién eres.</p>
+        
+        <p><strong>Vas a llegar lejos</strong>, no lo dudes ni por un segundo. Porque el éxito no se mide solo en logros, sino en la capacidad de persistir cuando todo parece en tu contra. Y tú, Fátima, tienes esa capacidad en abundancia.</p>
+        
+        <p>Hoy, mientras celebras otro año de vida, quiero que celebres también cada batalla ganada, cada lección aprendida, cada momento en que elegiste crecer en lugar de conformarte. Eres como el diamante: bella, fuerte, y formada bajo presión.</p>
+        
+        <p>El futuro te espera con los brazos abiertos, listo para entregarte todas las maravillas que mereces. Y tú estás lista para recibirlas, porque te has preparado, has luchado, has crecido.</p>
+        
+        <p>Feliz cumpleaños, guerrera. Que este nuevo año te traiga la certeza de tu propio poder, la alegría de tus triunfos y la paz de saber que, sin importar lo que venga, <strong>tú puedes superarlo</strong>. Tú puedes superarte a ti misma, una y otra vez.</p>
+      </div>
+      
+      <div class="letter-signature">
+        Con admiración y cariño,<br>
+        Quien cree en ti infinitamente
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==================== VARIABLES GLOBALES ====================
+    let confettiActive = false;
+    let confettiInterval;
+    const confettiParticles = [];
+    let magicActive = false;
+    let candleLit = true;
+    
+    // ==================== MODAL DE LA CARTA ====================
+    const modal = document.getElementById('letterModal');
+    const openModalBtn = document.getElementById('btnLetter');
+    const closeModalBtn = document.getElementById('closeModal');
+    const birthdayCard = document.getElementById('birthdayCard');
+    
+    // Solo la tarjeta principal abre el modal
+    birthdayCard.addEventListener('click', () => {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    // Botón "Carta especial" abre el modal
+    openModalBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    // Cerrar modal
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+    
+    // Cerrar modal al hacer clic fuera
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+    
+    // Cerrar modal con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+    
+    // ==================== SISTEMA DE CONFETI ====================
+    function createConfetti() {
+      if (!confettiActive) return;
+      
+      const colors = ['#ff4da6', '#ff8fbf', '#ffd166', '#c86bf9', '#6a8cff'];
+      const particle = document.createElement('div');
+      
+      particle.style.cssText = `
+        position: fixed;
+        width: ${Math.random() * 10 + 5}px;
+        height: ${Math.random() * 10 + 5}px;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        border-radius: ${Math.random() > 0.5 ? '50%' : '10%'};
+        top: -20px;
+        left: ${Math.random() * 100}vw;
+        opacity: 0.8;
+        z-index: 9999;
+        pointer-events: none;
+      `;
+      
+      document.body.appendChild(particle);
+      confettiParticles.push(particle);
+      
+      // Animación
+      const animation = particle.animate([
+        { transform: 'translateY(0) rotate(0deg)', opacity: 0.8 },
+        { transform: `translateY(${window.innerHeight + 20}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+      ], {
+        duration: Math.random() * 3000 + 2000,
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+      });
+      
+      animation.onfinish = () => {
+        particle.remove();
+        const index = confettiParticles.indexOf(particle);
+        if (index > -1) confettiParticles.splice(index, 1);
+      };
+    }
+    
+    // Control de confeti - Botón 1
+    document.getElementById('btnConfetti').addEventListener('click', (e) => {
+      e.stopPropagation(); // Evita que abra el modal
+      confettiActive = !confettiActive;
+      const btn = document.getElementById('btnConfetti');
+      
+      if (confettiActive) {
+        btn.innerHTML = '<span>Detener confeti</span> ❄️';
+        btn.classList.add('active');
+        confettiInterval = setInterval(createConfetti, 100);
+        
+        // Crear confeti inicial
+        for (let i = 0; i < 20; i++) {
+          setTimeout(createConfetti, i * 50);
+        }
+      } else {
+        btn.innerHTML = '<span>Confeti suave</span> 🎉';
+        btn.classList.remove('active');
+        clearInterval(confettiInterval);
+        
+        // Limpiar confeti existente
+        confettiParticles.forEach(particle => {
+          particle.style.opacity = '0';
+          setTimeout(() => particle.remove(), 500);
+        });
+        confettiParticles.length = 0;
+      }
+    });
+    
+    // ==================== MOMENTO MÁGICO ====================
+    function createStar() {
+      if (!magicActive) return;
+      
+      const starsContainer = document.getElementById('starsContainer');
+      const star = document.createElement('div');
+      star.className = 'star';
+      
+      const size = Math.random() * 8 + 4;
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const duration = Math.random() * 2 + 1;
+      const delay = Math.random() * 2;
+      
+      star.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}vw;
+        top: ${y}vh;
+        animation-duration: ${duration}s;
+        animation-delay: ${delay}s;
+        box-shadow: 0 0 ${size}px ${size/2}px rgba(255, 255, 255, 0.3);
+      `;
+      
+      starsContainer.appendChild(star);
+      
+      // Remover después de la animación
+      setTimeout(() => {
+        if (star.parentNode) {
+          star.remove();
+        }
+      }, (duration + delay) * 1000);
+    }
+    
+    // Control de momento mágico - Botón 3
+    document.getElementById('btnMagic').addEventListener('click', (e) => {
+      e.stopPropagation(); // Evita que abra el modal
+      magicActive = !magicActive;
+      const btn = document.getElementById('btnMagic');
+      
+      if (magicActive) {
+        btn.innerHTML = '<span>Detener magia</span> ✨';
+        btn.classList.add('active');
+        
+        // Crear estrellas cada 200ms
+        const magicInterval = setInterval(() => {
+          if (magicActive) {
+            createStar();
+          } else {
+            clearInterval(magicInterval);
+          }
+        }, 200);
+        
+        // Añadir estrellas iniciales
+        for (let i = 0; i < 15; i++) {
+          setTimeout(() => createStar(), i * 100);
+        }
+        
+        // Apagar automáticamente después de 10 segundos
+        setTimeout(() => {
+          if (magicActive) {
+            magicActive = false;
+            btn.innerHTML = '<span>Momento mágico</span> ✨';
+            btn.classList.remove('active');
+          }
+        }, 10000);
+        
+      } else {
+        btn.innerHTML = '<span>Momento mágico</span> ✨';
+        btn.classList.remove('active');
+        
+        // Limpiar estrellas
+        const starsContainer = document.getElementById('starsContainer');
+        while (starsContainer.firstChild) {
+          starsContainer.removeChild(starsContainer.firstChild);
+        }
+      }
+    });
+    
+    // ==================== SOPLAR VELA ====================
+    function blowCandle() {
+      const flame = document.getElementById('flame');
+      const cake = document.getElementById('cake');
+      
+      if (candleLit) {
+        // Apagar vela
+        flame.classList.add('out');
+        candleLit = false;
+        
+        // Crear humito
+        const smoke = document.createElement('div');
+        smoke.style.cssText = `
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background: rgba(200, 200, 200, 0.3);
+          border-radius: 50%;
+          top: ${cake.offsetTop - 10}px;
+          left: ${cake.offsetLeft + cake.offsetWidth / 2 - 10}px;
+          z-index: 100;
+          pointer-events: none;
+        `;
+        document.body.appendChild(smoke);
+        
+        // Animación del humo
+        smoke.animate([
+          { transform: 'scale(1)', opacity: 0.6 },
+          { transform: 'scale(3) translateY(-30px)', opacity: 0 }
+        ], {
+          duration: 1000,
+          easing: 'ease-out'
+        }).onfinish = () => smoke.remove();
+        
+        // Reactivar vela después de 3 segundos
+        setTimeout(() => {
+          flame.classList.remove('out');
+          candleLit = true;
+          
+          // Pequeño efecto de confeti al encender
+          createConfetti();
+          createConfetti();
+        }, 3000);
+      }
+    }
+    
+    // Click en pastel sopla la vela
+    document.getElementById('cake').addEventListener('click', (e) => {
+      e.stopPropagation(); // Evita que abra el modal
+      blowCandle();
+    });
+    
+    // ==================== EFECTOS HOVER ====================
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.style.transform = 'translateY(-3px)';
+      });
+      
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translateY(0)';
+      });
+    });
+    
+    // ==================== INICIO AUTOMÁTICO ====================
+    // Iniciar confeti suave automáticamente después de 1 segundo
+    setTimeout(() => {
+      confettiActive = true;
+      const confettiBtn = document.getElementById('btnConfetti');
+      confettiBtn.innerHTML = '<span>Detener confeti</span> ❄️';
+      confettiBtn.classList.add('active');
+      confettiInterval = setInterval(createConfetti, 150);
+      
+      // Confeti inicial
+      for (let i = 0; i < 15; i++) {
+        setTimeout(createConfetti, i * 100);
+      }
+    }, 1000);
+    
+    // Pequeño efecto mágico inicial
+    setTimeout(() => {
+      magicActive = true;
+      for (let i = 0; i < 8; i++) {
+        setTimeout(() => createStar(), i * 150);
+      }
+      setTimeout(() => {
+        magicActive = false;
+      }, 2000);
+    }, 1500);
+  </script>
+</body>
+</html>
